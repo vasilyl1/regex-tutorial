@@ -16,6 +16,7 @@ Formal definitions and examples can be looked up at [MDN Web Docs](#https://deve
 
 ## Table of Contents
 
+- [Regex Components](#Regex%20Components)
 - [Anchors](#anchors)
 - [Quantifiers](#quantifiers)
 - [OR Operator](#or-operator)
@@ -29,6 +30,15 @@ Formal definitions and examples can be looked up at [MDN Web Docs](#https://deve
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
+
+Regular expressions contain:
+- Single characters with no special significance just represents that character in a target string, the characters with the special significance are these: ^ . [ $ ( ) | * + ? { \ If there is a need to include the special significance character in the target string there is a way to ESCAPE it adding backslash \ before that chararcter, 
+- Wild cards (*, . symbols), 
+- Bracket Expressions (character sets enclosed by square brackets [ ]),
+- Control characters (a backslash \ followed by one of the characters a,b,f,n,r,t,v which represent ANSI-C interpretation of control character), 
+- Escape character sets (\w is word [A-Za-z0-9], \W is non-word [^A-Za-z0-9], \s is whitespace [ \f\n\r\t], \S is non-whitespace [^ \f\n\r\t], \d is digit [0-9], \D is non-digit [^0-9]),
+- Anchors are the special sequences which match an empty string: ^ matches at the beginning of a target string, $ matches at the end of target string, \b matches on a word boundary, i.e. previous or subsequent character is not a word character,
+- Recursive expansion: any regular expression surrounded by parentheses is an atom: { regular_expression }
 
 ### Anchors
 
