@@ -75,7 +75,10 @@ In our correct e-mail regex:
 
 /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
-\[\w-]{2,4} quantifier means that the word \w which could contain a-z,A-Z,0-9 and - symbol can be between 2 and 4 characters.
+{2,4} quantifier means that the pattern \[\w-] which contains the word \w which could contain a-z,A-Z,0-9 and - symbol can be between 2 and 4 characters.
+
+Following should match the pattern at least one or more times: [\w-\.] and [\w-] and ([\w-]+\.)
+
 
 
 ### OR Operator
