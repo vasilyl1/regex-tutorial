@@ -90,7 +90,21 @@ If a hyphen (-) used between the alphanumeric characters (letters and numbers), 
 
 ### Greedy and Lazy Match
 
+Greedy search: to find a match, the regular expression engine uses the following algorithm:
+- For every position in the string;
+- Try to match the pattern at that position;
+- If there’s no match, go to the next position;
+
+The lazy mode of quantifiers is an opposite to the greedy mode. It means: “repeat minimal number of times”.
+Laziness is only enabled for the quantifier with ?.
+Other quantifiers remain greedy.
+
 ### Boundaries
+
+The word boundary \b matches positions where one side is a word character (usually a letter, digit or underscore) and the other side is not a word character (for instance, it may be the beginning of the string or a space character).
+
+Not-a-word-boundary: \B
+\B matches all positions where \b doesn't match. 
 
 ### Back-references
 
