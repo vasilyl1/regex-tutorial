@@ -99,7 +99,17 @@ Our correct e-mail regex /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ uses \w character cl
 
 ### Flags
 
+When specified, these flags change the default match behavor of the RegExp object.
 
+Flag	Description
+g	Performs a global match, finding all matches rather than just the first.
+i	Makes matches case-insensitive. Matches both uppercase and lowercase.
+m	Performs multiline matches. (Changes behavior of ^,$)
+s	Allows . to match newline characters.
+u	Enables Unicode support.
+y	Matches are sticky, looking only at exact position in the text.
+
+We did not use any of these flags in our correct e-mail regex.
 
 ### Grouping and Capturing
 
@@ -137,6 +147,8 @@ Not-a-word-boundary: \B
 \B matches all positions where \b doesn't match. 
 
 ### Back-references
+
+
 
 ### Look-ahead and Look-behind
 
