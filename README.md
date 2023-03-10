@@ -146,9 +146,18 @@ The word boundary \b matches positions where one side is a word character (usual
 Not-a-word-boundary: \B
 \B matches all positions where \b doesn't match. 
 
+We did not use any of these flags in our correct e-mail regex.
+
 ### Back-references
 
+Backreferences match the same text as previously matched by a capturing group.
+Same backreference can be used more than once: 
 
+([a-c])x\1x\1 matches axaxa, bxbxb and cxcxc.
+
+Most regex flavors support up to 99 capturing groups and double-digit backreferences. So \99 is a valid backreference if regex has 99 capturing groups.
+
+We did not use any of these flags in our correct e-mail regex.
 
 ### Look-ahead and Look-behind
 
