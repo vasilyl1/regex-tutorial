@@ -47,7 +47,23 @@ The characters ^ and $ are both considered to be anchors. So the RegEx starts wi
 
 ### Quantifiers
 
+Quantifiers set the limits of the string or individual section of the string the regex matches. They can include the minimum and maximum number of characters that regex is looking for.
 
+Quantifiers match as many occurences of particular patterns as possible.
+
+They include the following:
+
+* - matches the pattern zero or more times
++ - matches the pattern one or more times
+? - matches the pattern zero or one time
+{} - provide three different ways to set limits for a match:
+  { n } - matches the pattern exactly n number of times
+  { n, } - matches the pattern at least n number of times
+  { n, x } - matches the pattern from minimum n number of times to maximum x number of times.
+In our correct e-mail regex:
+/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+
+[\w-]{2,4} quantifier means that the word \w which could contain a-z,A-Z,0-9 and - symbol can be between 2 and 4 characters.
 
 ### OR Operator
 
@@ -56,6 +72,11 @@ The characters ^ and $ are both considered to be anchors. So the RegEx starts wi
 ### Flags
 
 ### Grouping and Capturing
+
+Regular expressions allow to not only match text but also to extract information for further processing. This is done by defining groups of characters and capturing them using the special parentheses ( and ) metacharacters. Any subpattern inside a pair of parentheses will be captured as a group. In practice, this can be used to extract information like phone numbers or emails from all sorts of data.
+
+In our e-mail regex /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/  we use ([\w-]+\.) to define the domain name of the e-mail address which would be finished by the dot before the country code which is defined in [\w-]{2,4} 
+
 
 ### Bracket Expressions
 
