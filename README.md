@@ -42,7 +42,11 @@ Regular expressions contain:
 
 ### Anchors
 
-The characters ^ and $ are both considered to be anchors. So the RegEx starts with /^ and finishes with $/
+The characters ^ and \$ are both considered to be anchors. So the RegEx starts with /^ and finishes with $/
+
+So e-mail regex starts and ends with these anchors:
+
+/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
 
 ### Quantifiers
@@ -53,23 +57,49 @@ Quantifiers match as many occurences of particular patterns as possible.
 
 They include the following:
 
-* - matches the pattern zero or more times
-+ - matches the pattern one or more times
-? - matches the pattern zero or one time
-{} - provide three different ways to set limits for a match:
+\* - matches the pattern zero or more times
+
+\+ - matches the pattern one or more times
+
+\? - matches the pattern zero or one time
+
+\{} - provide three different ways to set limits for a match:
+
   { n } - matches the pattern exactly n number of times
+
   { n, } - matches the pattern at least n number of times
+
   { n, x } - matches the pattern from minimum n number of times to maximum x number of times.
+
 In our correct e-mail regex:
+
 /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
-[\w-]{2,4} quantifier means that the word \w which could contain a-z,A-Z,0-9 and - symbol can be between 2 and 4 characters.
+\[\w-]{2,4} quantifier means that the word \w which could contain a-z,A-Z,0-9 and - symbol can be between 2 and 4 characters.
+
 
 ### OR Operator
 
+The OR logical operator is expressed with the pipe character: |. As many terms as desired can be used as long as they are included as a separate terms contained within each (...) group. We did not use the OR in the e-mail regex, however below example illustrates usage of OR:
+
+/^I like (cats|birds), but not (lions|tigers).$/
+
 ### Character Classes
 
+A character class is a special notation that matches any symbol from a certain set.
+Most used are:
+\d (“d” is from “digit”)
+A digit: a character from 0 to 9.
+\s (“s” is from “space”)
+A space symbol: includes spaces, tabs \t, newlines \n and few other rare characters, such as \v, \f and \r.
+\w (“w” is from “word”)
+A “wordly” character: either a letter of Latin alphabet or a digit or an underscore _. Non-Latin letters (like cyrillic or hindi) do not belong to \w.
+
+Our correct e-mail regex /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ uses \w character class.
+
 ### Flags
+
+
 
 ### Grouping and Capturing
 
