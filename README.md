@@ -42,7 +42,12 @@ Regular expressions contain:
 
 ### Anchors
 
+The characters ^ and $ are both considered to be anchors. So the RegEx starts with /^ and finishes with $/
+
+
 ### Quantifiers
+
+
 
 ### OR Operator
 
@@ -53,6 +58,14 @@ Regular expressions contain:
 ### Grouping and Capturing
 
 ### Bracket Expressions
+
+Anything inside of the squre brackets ([]) represents a range of characters that we want to match. These patterns are known as bracket expressions or otherwise positive character group if we want to match it. There is a way to include ^ symbol in bracket expression, which would mean that we do not want ti include anything that matches that character sequence.
+For example, in our e-mail matching RegEx
+/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+we have following bracket expressions which we would like any candidate string to match:
+[\w-\.]
+[\w-]
+If a hyphen (-) used between the alphanumeric characters (letters and numbers), that would represent a range of the possible candidates, for example [a-z] is looking for a string containing any lower case letters from a to z. 
 
 ### Greedy and Lazy Match
 
