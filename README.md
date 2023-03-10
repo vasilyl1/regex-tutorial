@@ -14,6 +14,8 @@ JavaScript has many useful methods which can be used with RegExp and String:
 Regular expressions are used with the RegExp methods test() and exec() and with the String methods match(), replace(), search(), and split().
 Formal definitions and examples can be looked up at [MDN Web Docs](#https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
 
+When creating regular expressions, there certainly be a need to check and debug how it is working. The author of this manual has used the following resource which he would be at liberty to recommend for other developers to use: [RegExpr](#https://regexr.com/)
+
 ## Table of Contents
 
 - [Regex Components](#Regex%20Components)
