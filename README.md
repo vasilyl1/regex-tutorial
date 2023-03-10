@@ -161,6 +161,16 @@ We did not use any of these flags in our correct e-mail regex.
 
 ### Look-ahead and Look-behind
 
+It is easier to explain the look-ahead and look-behind technique by providing the below example. Note that we did not use any of that in our correct e-mail regex:
+
+(?=foo)	Lookahead	Asserts that what immediately follows the current position in the string is foo
+
+(?<=foo)	Lookbehind	Asserts that what immediately precedes the current position in the string is foo
+
+(?!foo)	Negative Lookahead	Asserts that what immediately follows the current position in the string is not foo
+
+(?<!foo)	Negative Lookbehind	Asserts that what immediately precedes the current position in the string is not foo
+
 ## Author
 
 My GitHub name is vl1. Most of the answers to the questions can be found there, here is the link to my profile at GitHub:
